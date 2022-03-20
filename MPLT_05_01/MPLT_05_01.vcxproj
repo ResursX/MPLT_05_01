@@ -141,9 +141,11 @@
   <ItemGroup>
     <ClCompile Include="MPLT_05_01.cpp" />
     <ClCompile Include="MPLT_05_01_INT.cpp" />
+    <ClCompile Include="MPLT_05_01_TREE.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MPLT_05_01_INT.h" />
+    <ClInclude Include="MPLT_05_01_TREE.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

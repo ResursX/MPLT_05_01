@@ -7,12 +7,13 @@ namespace MPLT_05_01 {
 		GameObject(int _ID);
 		GameObject(const GameObject &object);
 
+		int GetID();
 		std::string print();
 	private:
 		int ID;
 	};
 
-	class PhysicalObject abstract : public GameObject {
+	class PhysicalObject abstract : public virtual GameObject{
 	public:
 		PhysicalObject(int _ID, double _Weight);
 		PhysicalObject(const PhysicalObject& object);
@@ -22,7 +23,7 @@ namespace MPLT_05_01 {
 		double Weight;
 	};
 
-	class GraphicalObject abstract : public GameObject {
+	class GraphicalObject abstract : public virtual GameObject {
 	public:
 		GraphicalObject(int _ID, std::string _Texture);
 		GraphicalObject(const GraphicalObject& object);

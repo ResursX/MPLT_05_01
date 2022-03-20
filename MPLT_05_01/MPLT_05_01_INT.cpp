@@ -18,6 +18,11 @@ namespace MPLT_05_01  {
 		ID = object.ID;
 	}
 
+	int GameObject::GetID()
+	{
+		return ID;
+	}
+
 	std::string GameObject::print()
 	{
 		return "ID: " + std::to_string(ID) + '\n';
@@ -60,18 +65,20 @@ namespace MPLT_05_01  {
 
 	std::string GraphicalObject::print()
 	{
-		return GameObject::print() + "Texture: " + Texture + '\n';
+		return "Texture: " + Texture + '\n';
+
+		//return GameObject::print() + "Texture: " + Texture + '\n';
 	}
 
 	//Projectile
-	Projectile::Projectile(int _ID, double _Weight, int _Caliber) : PhysicalObject(_ID, _Weight)
+	Projectile::Projectile(int _ID, double _Weight, int _Caliber) : GameObject(_ID), PhysicalObject(_ID, _Weight)
 	{
 		std::cout << "Projectile" << std::endl;
 
 		Caliber = _Caliber;
 	}
 
-	Projectile::Projectile(const Projectile& object) : PhysicalObject(object)
+	Projectile::Projectile(const Projectile& object) : GameObject(object), PhysicalObject(object)
 	{
 		std::cout << "Projectile" << std::endl;
 
@@ -84,14 +91,14 @@ namespace MPLT_05_01  {
 	}
 
 	//Transport Vehicle
-	TransportVehicle::TransportVehicle(int _ID, double _Weight, double _EnginePower) : PhysicalObject(_ID, _Weight)
+	TransportVehicle::TransportVehicle(int _ID, double _Weight, double _EnginePower) : GameObject(_ID), PhysicalObject(_ID, _Weight)
 	{
 		std::cout << "TransportVehicle" << std::endl;
 
 		EnginePower = _EnginePower;
 	}
 
-	TransportVehicle::TransportVehicle(const TransportVehicle& object) : PhysicalObject(object)
+	TransportVehicle::TransportVehicle(const TransportVehicle& object) : GameObject(object), PhysicalObject(object)
 	{
 		std::cout << "TransportVehicle" << std::endl;
 
@@ -104,14 +111,14 @@ namespace MPLT_05_01  {
 	}
 
 	//Tank
-	Tank::Tank(int _ID, double _Weight, std::string _Texture, double _EnginePower, int _ArmorThickness) : TransportVehicle(_ID, _Weight, _EnginePower), GraphicalObject(_ID, _Texture)
+	Tank::Tank(int _ID, double _Weight, std::string _Texture, double _EnginePower, int _ArmorThickness) : GameObject(_ID), TransportVehicle(_ID, _Weight, _EnginePower), GraphicalObject(_ID, _Texture)
 	{
 		std::cout << "Tank" << std::endl;
 
 		ArmorThickness = _ArmorThickness;
 	}
 
-	Tank::Tank(const Tank& object) : TransportVehicle(object), GraphicalObject(object)
+	Tank::Tank(const Tank& object) : GameObject(object), TransportVehicle(object), GraphicalObject(object)
 	{
 		std::cout << "Tank" << std::endl;
 
@@ -124,14 +131,14 @@ namespace MPLT_05_01  {
 	}
 
 	//Plane
-	Plane::Plane(int _ID, double _Weight, std::string _Texture, double _EnginePower, double _Capacity) : TransportVehicle(_ID, _Weight, _EnginePower), GraphicalObject(_ID, _Texture)
+	Plane::Plane(int _ID, double _Weight, std::string _Texture, double _EnginePower, double _Capacity) : GameObject(_ID), TransportVehicle(_ID, _Weight, _EnginePower), GraphicalObject(_ID, _Texture)
 	{
 		std::cout << "Plane" << std::endl;
 
 		Capacity = _Capacity;
 	}
 
-	Plane::Plane(const Plane& object) : TransportVehicle(object), GraphicalObject(object)
+	Plane::Plane(const Plane& object) : GameObject(object), TransportVehicle(object), GraphicalObject(object)
 	{
 		std::cout << "Plane" << std::endl;
 

@@ -21,9 +21,15 @@
     <ClCompile Include="MPLT_05_01_INT.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="MPLT_05_01_TREE.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MPLT_05_01_INT.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="MPLT_05_01_TREE.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
