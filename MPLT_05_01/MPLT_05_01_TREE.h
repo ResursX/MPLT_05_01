@@ -13,7 +13,7 @@ namespace MPLT_05_01 {
 		TNode(GameObject*);
 		~TNode();
 
-		MPLT_05_01::GameObject* Object;
+		MPLT_05_01::GameObject* Data;
 		TNode* Parent, * Left, * Right;
 		NodeColor Color;
 

@@ -114,8 +114,6 @@ private:
     }
 } *PTree;
 
-
-
 int main()
 {
     MPLT_05_01::PTree tree = new MPLT_05_01::TTree();
