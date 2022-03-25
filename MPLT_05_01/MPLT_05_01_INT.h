@@ -6,9 +6,10 @@ namespace MPLT_05_01 {
 	public:
 		GameObject(int _ID);
 		GameObject(const GameObject &object);
+		virtual ~GameObject();
 
 		int GetID();
-		std::string print();
+		virtual std::string print();
 	private:
 		int ID;
 	};
@@ -17,8 +18,9 @@ namespace MPLT_05_01 {
 	public:
 		PhysicalObject(int _ID, double _Weight);
 		PhysicalObject(const PhysicalObject& object);
+		virtual ~PhysicalObject();
 
-		std::string print();
+		virtual std::string print();
 	private:
 		double Weight;
 	};
@@ -27,8 +29,9 @@ namespace MPLT_05_01 {
 	public:
 		GraphicalObject(int _ID, std::string _Texture);
 		GraphicalObject(const GraphicalObject& object);
+		virtual ~GraphicalObject();
 
-		std::string print();
+		virtual std::string print();
 	private:
 		std::string Texture;
 	};
@@ -37,8 +40,9 @@ namespace MPLT_05_01 {
 	public:
 		Projectile(int _ID, double _Weight, int _Caliber);
 		Projectile(const Projectile& object);
+		virtual ~Projectile();
 
-		std::string print();
+		virtual std::string print();
 	private:
 		int Caliber;
 	};
@@ -47,8 +51,9 @@ namespace MPLT_05_01 {
 	public:
 		TransportVehicle(int _ID, double _Weight, double _EnginePower);
 		TransportVehicle(const TransportVehicle& object);
+		virtual ~TransportVehicle();
 
-		std::string print();
+		virtual std::string print();
 	private:
 		double EnginePower;
 	};
@@ -57,8 +62,9 @@ namespace MPLT_05_01 {
 	public:
 		Tank(int _ID, double _Weight, std::string _Texture, double _EnginePower, int _ArmorThickness);
 		Tank(const Tank& object);
+		virtual ~Tank();
 
-		std::string print();
+		virtual std::string print();
 	private:
 		int ArmorThickness;
 	};
@@ -67,8 +73,9 @@ namespace MPLT_05_01 {
 	public:
 		Plane(int _ID, double _Weight, std::string _Texture, double _EnginePower, double _Capacity);
 		Plane(const Plane& object);
+		virtual ~Plane();
 
-		std::string print();
+		virtual std::string print();
 	private:
 		double Capacity;
 	};
